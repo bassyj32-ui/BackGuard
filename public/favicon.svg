@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BackGuard">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <!-- Isometric tile, 2:1 diamond -->
+  <path d="M32 44 L52 33 L32 22 L12 33 Z" fill="#38bdf8"/>
+  <path d="M12 33 L32 44 L32 52 L12 41 Z" fill="#1e5f86"/>
+  <path d="M52 33 L32 44 L32 52 L52 41 Z" fill="#2a7ba8"/>
+  <!-- Spine marker -->
+  <path d="M32 16 L32 30" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+</svg>

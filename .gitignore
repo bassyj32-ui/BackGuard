@@ -1,0 +1,9 @@
+dist/
+node_modules/
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+public/model/*.task
+public/model/wasm/
+.env
+.env.local
+*.local

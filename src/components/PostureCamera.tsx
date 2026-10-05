@@ -83,10 +83,11 @@ export default function PostureCamera({ status, onStatus, onFrame, active }: Pos
         workerRef.current = worker;
         worker.onmessage = (e: MessageEvent<PoseWorkerResponse>) => handleWorkerMessage(e.data);
         worker.onerror = () => onStatus('error', 'Pose worker failed to start.');
+        const base = import.meta.env.BASE_URL;
         const init: PoseWorkerRequest = {
           type: 'init',
-          modelPath: '/model/pose_landmarker_lite.task',
-          wasmPath: '/model/wasm',
+          modelPath: `${base}model/pose_landmarker_lite.task`,
+          wasmPath: `${base}model/wasm`,
         };
         worker.postMessage(init);
       } catch {

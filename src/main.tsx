@@ -14,3 +14,13 @@ createRoot(container).render(
     <App />
   </StrictMode>,
 );
+
+// Register the offline shell. Only in production: a cached service worker in dev
+// serves stale bundles and makes changes appear not to apply.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {
+      // Offline support is a bonus. Failing to register must not break the app.
+    });
+  });
+}

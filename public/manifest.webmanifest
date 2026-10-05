@@ -2,15 +2,15 @@
   "name": "BackGuard",
   "short_name": "BackGuard",
   "description": "A daily three-minute back-care habit, coached on your device.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/BackGuard/",
+  "scope": "/BackGuard/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/BackGuard/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

@@ -32,14 +32,14 @@ jobs:
           mkdir -p public/model/wasm
           cp node_modules/@mediapipe/tasks-vision/wasm/* public/model/wasm/
 
-      # The .task model is not shipped inside the npm package and is not
-      # committed. Without it the app still runs, but form feedback is disabled
-      # and the Session screen says so.
-      - name: Report missing pose model
+      # The .task model is not shipped in the npm package and is not committed.
+      # Fetch it at build time so form feedback works on the deployed site
+      # without a 5.7 MB binary in git history.
+      - name: Fetch the pose model
         run: |
-          if [ ! -f public/model/pose_landmarker_lite.task ]; then
-            echo "::warning title=Pose model missing::pose_landmarker_lite.task not present; camera coaching will be disabled on the deployed site."
-          fi
+          curl -fsSL -o public/model/pose_landmarker_lite.task \
+            "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task" \
+            || echo "::warning title=Pose model fetch failed::camera coaching will be disabled on the deployed site."
 
       - run: npm run build
       - run: npm run typecheck

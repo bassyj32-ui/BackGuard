@@ -25,6 +25,8 @@ jobs:
           node-version: 22
           cache: npm
 
+      - run: npm ci
+
       - name: Copy the pose WASM runtime into public
         run: |
           mkdir -p public/model/wasm
@@ -39,7 +41,6 @@ jobs:
             echo "::warning title=Pose model missing::pose_landmarker_lite.task not present; camera coaching will be disabled on the deployed site."
           fi
 
-      - run: npm ci
       - run: npm run build
       - run: npm run typecheck
 

@@ -4,7 +4,9 @@ A daily ~3-minute back-care habit for people who sit a long time, coached by
 on-device camera pose detection. No account, no backend, no video leaving the
 device.
 
-> **Status:** early scaffold. See [PLAN.md](./PLAN.md) for the full agreed plan.
+**Live at https://bassyj32-ui.github.io/BackGuard/**
+
+> **Status:** early build. See [PLAN.md](./PLAN.md) for the full agreed plan.
 >
 > **This is not medical advice.** BackGuard is an educational tool for reducing
 > risk and building a movement habit. It does not diagnose or treat anything.

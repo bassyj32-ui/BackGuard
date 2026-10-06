@@ -1,10 +1,6 @@
-const STORAGE_KEY = 'backguard.progress.v1';
+import { EXERCISES } from '../data/exercises';
 
-export interface ExerciseRecord {
-  repsDone: number;
-  targetReps: number;
-  completed: boolean;
-}
+const STORAGE_KEY = 'backguard.progress.v1';
 
 export interface DayRecord {
   /** ISO date, YYYY-MM-DD. */
@@ -29,6 +25,15 @@ const EMPTY: Progress = {
   longestStreak: 0,
   days: [],
 };
+
+/** Stable ordinal per exercise id, so a plot index always means the same thing. */
+const EXERCISE_ORDINAL: Record<string, number> = Object.fromEntries(
+  EXERCISES.map((e, i) => [e.id, i]),
+);
+
+export function plotIndexForExercise(id: string): number {
+  return EXERCISE_ORDINAL[id] ?? 0;
+}
 
 export function todayIso(): string {
   return new Date().toISOString().slice(0, 10);

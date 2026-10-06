@@ -2,6 +2,8 @@ dist/
 node_modules/
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+shots/
+shots.mjs
 public/model/*.task
 public/model/wasm/
 .env
